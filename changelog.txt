@@ -4,6 +4,10 @@ https://www.wpzoom.com/themes/foodica-lite
 CHANGELOG
 ---------
 
+v 1.2.1
+* Multiple improvements and bug fixes
+* Bug fix with the search field not working correctly
+
 v 1.2.0
 * Fixed a PageSpeed issue in theme: "Does not use passive listeners to improve scrolling performance"
 * Fixed issues listed in the jQuery Migrate Helper plugin

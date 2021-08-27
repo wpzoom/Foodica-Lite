@@ -101,6 +101,15 @@ function foodica_setup() {
      */
     add_theme_support( 'align-wide' );
 
+    // Add support for default block styles.
+    add_theme_support( 'wp-block-styles' );
+
+    // Add support for editor styles.
+    add_theme_support( 'editor-styles' );
+
+    // Enqueue editor styles.
+    add_editor_style( 'assets/css/gutenberg-editor-style.css' );
+
 }
 add_action( 'after_setup_theme', 'foodica_setup' );
 
@@ -158,9 +167,9 @@ function foodica_custom_logo() {
  * Enqueues scripts and styles
  */
 function foodica_enqueue_scripts() {
-	wp_enqueue_style( 'foodica-style', get_stylesheet_uri(), '', '1.2.0' );
+	wp_enqueue_style( 'foodica-style', get_stylesheet_uri(), '', '1.2.1' );
 
-	wp_enqueue_style( 'foodica-style-mobile', get_template_directory_uri() . '/assets/css/media-queries.css', array( 'foodica-style' ), '1.2.0' );
+	wp_enqueue_style( 'foodica-style-mobile', get_template_directory_uri() . '/assets/css/media-queries.css', array( 'foodica-style' ), '1.2.1' );
 
 	wp_enqueue_style( 'foodica-google-font-default', '//fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Roboto+Condensed:400,700|Inter:400,500,600&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext&display=swap' );
 
@@ -174,7 +183,7 @@ function foodica_enqueue_scripts() {
 
     wp_enqueue_script( 'superfish', get_template_directory_uri() . '/assets/js/superfish.min.js', array( 'jquery' ), '1.2.0', true );
 
-    wp_enqueue_script( 'foodica-search_button', get_template_directory_uri() . '/assets/js/foodica-search_button.js', array(), '1.2.0', true );
+    wp_enqueue_script( 'foodica-search_button', get_template_directory_uri() . '/assets/js/foodica-search_button.js', array(), '1.2.1', true );
 
  	wp_enqueue_script( 'foodica-script', get_template_directory_uri() . '/assets/js/foodica-functions.js', array( 'jquery' ), '1.2.0', true );
 
@@ -359,7 +368,7 @@ function foodica_register_required_plugins() {
     $recipe_card_plugin = array(
         'name'         => 'Recipe Card Blocks',
         'slug'         => 'recipe-card-blocks-by-wpzoom',
-        'required'     => false
+        'required'     => true
     );
 
     if ( class_exists( 'WPZOOM_Recipe_Card_Block_Gutenberg' ) ) {
@@ -369,7 +378,7 @@ function foodica_register_required_plugins() {
             $recipe_card_plugin = array(
                 'name'         => 'Recipe Card Blocks PRO',
                 'slug'         => 'recipe-card-blocks-by-wpzoom-pro',
-                'required'     => false
+                'required'     => true
             );
 
         }
@@ -394,6 +403,13 @@ function foodica_register_required_plugins() {
             'slug'         => 'instagram-widget-by-wpzoom',
             'required'     => false,
         ),
+
+        array(
+            'name'         => 'Custom Posts Per Page Reloaded',
+            'slug'         => 'custom-posts-per-page-reloaded',
+            'required'     => false,
+        ),
+
         $recipe_card_plugin
 
     );

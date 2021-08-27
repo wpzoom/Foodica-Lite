@@ -3,10 +3,10 @@
  Theme URI: https://www.wpzoom.com/free-wordpress-themes/foodica-lite/
  Description: Foodica is perfect for creating food based blogs and recipe websites. A beautiful featured slider and WooCommerce integration mean Foodica is packed with features to help you stand out. The new version 1.1 includes a beautiful Recipe Index template. For DEMO and more details about the PRO version look here: https://www.wpzoom.com/free-wordpress-themes/foodica-lite/
  Tags: two-columns, three-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, threaded-comments, translation-ready, blog, e-commerce, food-and-drink
- Version: 1.2.0
+ Version: 1.2.1
  Requires at least: 5.2
  Requires PHP: 5.6
- Tested up to: 5.7
+ Tested up to: 5.8
  Author: WPZOOM
  Author URI: https://www.wpzoom.com/
  License: GPL v3 or later
@@ -89,7 +89,6 @@ html {
      max-width: 100%;
 }
  hr {
-     -moz-box-sizing: content-box;
      box-sizing: content-box;
      height: 0;
 }
@@ -134,8 +133,6 @@ html {
 }
  input[type="search"] {
      -webkit-appearance: textfield;
-     -moz-box-sizing: content-box;
-     -webkit-box-sizing: content-box;
      box-sizing: content-box;
 }
  input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
@@ -164,13 +161,9 @@ html {
      padding: 0
 }
  * {
-     -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
      box-sizing: border-box;
 }
  *:before, *:after {
-     -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
      box-sizing: border-box;
 }
  input, button, select, textarea {
@@ -380,8 +373,6 @@ textarea {
     border: 1px solid #e2e2e2;
     width: auto;
     color: #444;
-     -webkit-transition: 0.2s ease all;
-    -o-transition: 0.2s ease all;
     transition: 0.2s ease all;
     border-radius: 2px;
 }
@@ -451,9 +442,6 @@ div.navigation a {
     padding: 6px 12px;
     margin: 0;
     display: inline-block;
-    -webkit-transition: all .25s ease-in-out;
-    -moz-transition: all .25s ease-in-out;
-    -o-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;
     color: #666;
     border-radius: 3px;
@@ -493,12 +481,10 @@ div.navigation .alignright {
 div.navigation .prev,
 div.navigation .next {
     position: absolute;
-     border-radius: 3px;
-      color: #363940;
+    border-radius: 3px;
+    color: #363940;
     padding: 10px 20px;
     border: 1px solid #c7c9cf;
-     -moz-transition-duration: 200ms;
-    -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
     font-size: 14px;
     font-weight: bold;
@@ -589,8 +575,6 @@ div.navigation a.btn-primary:hover {
 }
 
 .infinite-scroll #infinite-handle span button {
-    -webkit-transition: none;
-    -o-transition: none;
     transition: none;
 }
 
@@ -752,8 +736,6 @@ a:hover, a:focus {
 
 .navbar-wpz a {
     padding: 10px 15px;
-    -webkit-transition: 0.1s ease all;
-    -o-transition: 0.1s ease all;
     transition: 0.1s ease all;
     text-transform: uppercase;
 }
@@ -952,15 +934,9 @@ a:hover, a:focus {
     opacity:0;
     border: none;
     border-radius: 50px;
-    -webkit-transition: width 0.3s;
-    -moz-transition: width 0.3s;
     transition: width 0.3s;
-    -webkit-backface-visibility: hidden;
-    -webkit-transition: 0.2s ease all;
-    -o-transition: 0.2s ease all;
     transition: 0.2s ease all;
     background: #818592;
-    -webkit-transition: width 0.6s,
     border-radius 0.6s,
     background 0.6s;
     transition: width 0.6s, border-radius 0.6s, background 0.6s;
@@ -1051,7 +1027,6 @@ a:hover, a:focus {
     visibility: visible;
     opacity: 1;
     width: 200px;
-    -webkit-transition: width 0.6s cubic-bezier(0, 1.22, 0.66, 1.39), border-radius 0.6s, background 0.6s;
     transition: width 0.6s cubic-bezier(0, 1.22, 0.66, 1.39), border-radius 0.6s, background 0.6s;
 }
 
@@ -1087,8 +1062,6 @@ a:hover, a:focus {
 }
 
 .header_social .zoom-social-icons-list--without-canvas .socicon {
-    -webkit-transition: 0.3s ease all;
-    -o-transition: 0.3s ease all;
     transition: 0.3s ease all;
     color: #363940;
     padding: 5px;
@@ -1170,9 +1143,7 @@ a:hover, a:focus {
     height: 60px;
     width: 60px;
     background: none;
-     padding: 2%;
-    -webkit-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
+    padding: 2%;
     transition: all 0.3s ease-out;
     opacity: .8;
     background: #fff;
@@ -1225,24 +1196,13 @@ a:hover, a:focus {
     height: 100%;
     border-radius: 2px;
     color: #9297a4;
-
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIyNyUiIHN0b3AtY29sb3I9IiNlZmY0ZjciIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPHN0b3Agb2Zmc2V0PSI2MyUiIHN0b3AtY29sb3I9IiNlZmY0ZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(left,  rgba(239,244,247,0) 27%, #EFF4F7 63%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(27%, #EFF4F7), color-stop(63%,rgba(239,244,247,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left,  rgba(239,244,247,0) 27%, #EFF4F7 63%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left,  rgba(239,244,247,0) 27%, #EFF4F7 63%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left,  rgba(239,244,247,0) 27%, #EFF4F7 63%); /* IE10+ */
     background: linear-gradient(to right,  rgba(239,244,247,0) 27%, #EFF4F7 63%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00eff4f7', endColorstr='#eff4f7',GradientType=1 ); /* IE6-8 */
 }
 
 
 .slides li .slide-header {
     position: absolute;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     right: 2%;
     width: 40%;
@@ -1327,11 +1287,7 @@ a:hover, a:focus {
     color: #fff;
     padding: 10px 30px;
     background: #363940;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
     border-radius: 3px;
-    -moz-transition-duration: 200ms;
-    -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
 }
 
@@ -1371,10 +1327,8 @@ a:hover, a:focus {
     width: 14px;
     height: 14px;
     margin: 0 5px;
-     border-radius: 50%;
+    border-radius: 50%;
     cursor: pointer;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
     border: 2px solid #fff;
 
@@ -1976,9 +1930,6 @@ h4.jp-relatedposts-post-title {
 
 .tag_list a {
     display: inline-block;
-    -webkit-transition: all .25s ease-in-out;
-    -moz-transition: all .25s ease-in-out;
-    -o-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;
     text-decoration: none;
     font-size: 14px;
@@ -2002,7 +1953,6 @@ h4.jp-relatedposts-post-title {
     height: 7px;
     left: 0;
     position: absolute;
-    -webkit-transition: all 0.1s linear;
     transition: all 0.1s linear;
     width: 100%;
     z-index: -1;
@@ -2034,8 +1984,6 @@ h4.jp-relatedposts-post-title {
      padding: 6px 15px;
     border-radius: 3px;
     margin: 0 10px;
-    -webkit-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
     font-weight: bold;
     font-family: "Roboto Condensed", sans-serif;
@@ -2101,7 +2049,6 @@ h4.jp-relatedposts-post-title {
 .single .post_author > img {
     float: left;
     margin-right: 25px;
-    -webkit-border-radius: 50%;
     border-radius: 50%;
 }
 
@@ -2363,8 +2310,6 @@ h4.jp-relatedposts-post-title {
     filter: alpha(opacity=60);
     opacity: 0.6;
     transition: opacity 0.25s ease-in-out;
-    -moz-transition: opacity 0.25s ease-in-out;
-    -webkit-transition: opacity 0.25s ease-in-out;
 }
 
 .section-footer .zoom-instagram-widget__items {
@@ -2388,9 +2333,6 @@ h4.jp-relatedposts-post-title {
     z-index: 10;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
@@ -2412,14 +2354,11 @@ h4.jp-relatedposts-post-title {
 }
 
 .section-footer .zoom-instagram-widget a.ig-b-v-24:hover {
-    -webkit-box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.3);
 }
 
 .section-footer .zoom-instagram-widget li img:hover {
     opacity: 0.9;
-    -webkit-transition: none;
-    -o-transition: none;
     transition: none;
 }
 
@@ -2511,8 +2450,6 @@ h4.jp-relatedposts-post-title {
 .widget_archive li {
     width: 50%;
     float: left;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 1.5%;
 }
@@ -2750,13 +2687,7 @@ h4.jp-relatedposts-post-title {
   width: 19px;
   height: 16px;
   position: relative;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
 }
@@ -2769,44 +2700,26 @@ h4.jp-relatedposts-post-title {
   background: #d3531a;
   opacity: 1;
   left: 0;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
   transition: .25s ease-in-out;
 }
 
 .slicknav_collapsed .slicknav_icon span:nth-child(1) {
   top: 0px;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
   transform-origin: left center;
 }
 
 .slicknav_collapsed .slicknav_icon span:nth-child(2) {
   top: 6px;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
   transform-origin: left center;
 }
 
 .slicknav_collapsed .slicknav_icon span:nth-child(3) {
   top: 12px;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
   transform-origin: left center;
 }
 
 .slicknav_open .slicknav_icon span:nth-child(1) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
   transform: rotate(45deg);
   top: 5px;
   left: 0;
@@ -2818,9 +2731,6 @@ h4.jp-relatedposts-post-title {
 }
 
 .slicknav_open .slicknav_icon span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   top: 5px;
   left: 0;
@@ -3237,11 +3147,7 @@ body.ei-index #easyindex-index li.ei-item {
     color: #fff;
     padding: 13px 30px;
     background: #363940;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
     border-radius: 3px;
-    -moz-transition-duration: 200ms;
-    -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
 }
 
