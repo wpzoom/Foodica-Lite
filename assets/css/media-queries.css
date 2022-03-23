@@ -134,7 +134,7 @@ add your styles in Customizer > Additional CSS.
         font-size: 20px
     }
 
-    .navbar-brand-wpz h1  {
+    .navbar-brand-wpz h2  {
         font-size: 60px !important;
         letter-spacing: 0;
     }

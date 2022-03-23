@@ -160,7 +160,7 @@ function foodica_get_featured_content() {
  *
  */
 function foodica_custom_logo() {
-    has_custom_logo() ? the_custom_logo() : printf('<h1><a href="%s" title="%s">%s</a></h1>', esc_url(home_url()), get_bloginfo('description'), get_bloginfo('name'));
+    has_custom_logo() ? the_custom_logo() : printf('<h2><a href="%s" title="%s">%s</a></h2>', esc_url(home_url()), get_bloginfo('description'), get_bloginfo('name'));
 }
 
 /**

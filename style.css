@@ -3,10 +3,10 @@
  Theme URI: https://www.wpzoom.com/free-wordpress-themes/foodica-lite/
  Description: Foodica is perfect for creating food based blogs and recipe websites. A beautiful featured slider and WooCommerce integration mean Foodica is packed with features to help you stand out. The new version 1.1 includes a beautiful Recipe Index template. For DEMO and more details about the PRO version look here: https://www.wpzoom.com/free-wordpress-themes/foodica-lite/
  Tags: two-columns, three-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, threaded-comments, translation-ready, blog, e-commerce, food-and-drink
- Version: 1.2.1
- Requires at least: 5.2
- Requires PHP: 5.6
- Tested up to: 5.8
+ Version: 1.2.2
+ Requires at least: 5.5
+ Requires PHP: 7.2
+ Tested up to: 5.9
  Author: WPZOOM
  Author URI: https://www.wpzoom.com/
  License: GPL v3 or later
@@ -365,7 +365,8 @@ label {
 .wpforms-form input[type=text],
 .wpforms-field input[type="text"],
 input,
-textarea {
+textarea,
+.wp-block-search__input {
     padding: 8px 12px;
     font-size: 16px;
     font-weight: normal;
@@ -384,9 +385,15 @@ textarea {
 
 .wpforms-field input[type="text"]:focus,
 input:focus,
-textarea:focus {
+textarea:focus,
+.wp-block-search__input:focus {
     border-color: #ccc;
     outline: 0;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+    border: 1px solid #e2e2e2;
+    border-radius: 2px;
 }
 
 div.wpforms-container-full .wpforms-form input[type=submit],
@@ -395,7 +402,8 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button,
 button,
 input[type=button],
 input[type=reset],
-input[type=submit] {
+input[type=submit],
+.wp-block-search__button {
     font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
     font-size: 16px;
@@ -413,7 +421,8 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover,
 button:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
-input[type=submit]:hover {
+input[type=submit]:hover,
+.wp-block-search__button:hover {
     cursor: pointer;
     background: #818592;
     border: none;
@@ -635,7 +644,7 @@ a:hover, a:focus {
     margin-bottom: 10px;
 }
 
-.navbar-brand-wpz h1 {
+.navbar-brand-wpz h2 {
     font-weight: normal;
     letter-spacing: -1px;
     font-family: "Annie Use Your Telescope", sans-serif;
@@ -1481,6 +1490,23 @@ a:hover, a:focus {
     height: auto;
 }
 
+.wp-block-post-template.wp-block-post-template li,
+.wp-block-query-loop.wp-block-post-template li {
+    list-style-type: none;
+}
+
+.wp-block-post-template.wp-block-post-template li .alignwide,
+.wp-block-query-loop.wp-block-post-template li .alignwide {
+    margin-left: 0;
+    margin-right:0;
+    max-width: 100%;
+}
+
+h2.wp-block-post-title {
+    font-size: 22px;
+}
+
+
 .entry-meta {
     margin-bottom: 15px;
     color: #999;
@@ -2232,6 +2258,7 @@ h4.jp-relatedposts-post-title {
     text-align: center;
 }
 
+#sidebar .wp-block-group .wp-block-group__inner-container > h2,
 .widget .title {
     margin-bottom: 20px;
     padding: 10px 0;
@@ -2243,6 +2270,18 @@ h4.jp-relatedposts-post-title {
     text-align: center;
     font-family: "Roboto Condensed", sans-serif;
 }
+
+.widget_block > h2 {
+    padding: 10px 0 0;
+    color: #363940;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
 
 #sidebar .widget:after {
     content: " ";

@@ -4,6 +4,9 @@ https://www.wpzoom.com/themes/foodica-lite
 CHANGELOG
 ---------
 
+v 1.2.2
+* Multiple improvements and bug fixes
+
 v 1.2.1
 * Multiple improvements and bug fixes
 * Bug fix with the search field not working correctly
