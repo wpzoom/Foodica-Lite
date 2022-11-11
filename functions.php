@@ -3,9 +3,26 @@
  * @package foodica
  */
 
+/**
+ * Define Constants
+ */
+define( 'FOODICA_THEME_VERSION', '1.3.0' );
+define( 'FOODICA_THEME_DIR', trailingslashit( get_template_directory() ) );
+define( 'FOODICA_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
+define( 'FOODICA_THEME_ASSETS_URI', FOODICA_THEME_URI . 'dist' );
+
 /* Customizer */
 require get_template_directory() . '/inc/customizer/bootstrap.php';
 require_once( trailingslashit( get_template_directory() ) . '/inc/customizer/trt-customize-pro/upgrade-pro/class-customize.php' );
+
+/**
+ * Customizer additions.
+ */
+require FOODICA_THEME_DIR . 'inc/classes/class-foodica-font-family-manager.php';
+require FOODICA_THEME_DIR . 'inc/classes/class-foodica-fonts-manager.php';
+require FOODICA_THEME_DIR . 'inc/customizer-functions.php';
+require FOODICA_THEME_DIR . 'inc/customizer/class-foodica-customizer-control-base.php';
+require FOODICA_THEME_DIR . 'inc/customizer/class-foodica-customizer.php';
 
 /**
  * Load Jetpack plugin enhancement file to display admin notices.
@@ -171,7 +188,8 @@ function foodica_enqueue_scripts() {
 
 	wp_enqueue_style( 'foodica-style-mobile', get_template_directory_uri() . '/assets/css/media-queries.css', array( 'foodica-style' ), '1.2.1' );
 
-	wp_enqueue_style( 'foodica-google-font-default', '//fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Roboto+Condensed:400,700|Inter:400,500,600&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext&display=swap' );
+	// Add custom fonts, used in the main stylesheet.
+	Foodica_Fonts_Manager::render_fonts();
 
 	wp_enqueue_style( 'dashicons' );
 
@@ -198,6 +216,9 @@ function foodica_enqueue_scripts() {
     );
 
     wp_localize_script( 'foodica-script', 'zoomOptions', $foodica_translation_array );
+
+	$theme_css_data = apply_filters( 'foodica/dynamic_theme_css', '' );
+	wp_add_inline_style( 'foodica-style', $theme_css_data );
 
 }
 
@@ -368,7 +389,7 @@ function foodica_register_required_plugins() {
     $recipe_card_plugin = array(
         'name'         => 'Recipe Card Blocks',
         'slug'         => 'recipe-card-blocks-by-wpzoom',
-        'required'     => true
+        'required'     => false
     );
 
     if ( class_exists( 'WPZOOM_Recipe_Card_Block_Gutenberg' ) ) {
@@ -378,7 +399,7 @@ function foodica_register_required_plugins() {
             $recipe_card_plugin = array(
                 'name'         => 'Recipe Card Blocks PRO',
                 'slug'         => 'recipe-card-blocks-by-wpzoom-pro',
-                'required'     => true
+                'required'     => false
             );
 
         }
@@ -407,6 +428,12 @@ function foodica_register_required_plugins() {
         array(
             'name'         => 'Custom Posts Per Page Reloaded',
             'slug'         => 'custom-posts-per-page-reloaded',
+            'required'     => false,
+        ),
+
+        array(
+            'name'         => 'Block Patterns for Food Bloggers',
+            'slug'         => 'block-patterns-for-food-bloggers',
             'required'     => false,
         ),
 
@@ -505,3 +532,22 @@ if ( ! function_exists( 'foodica_get_the_archive_title' ) ) :
     }
     endif;
 add_filter( 'get_the_archive_title', 'foodica_get_the_archive_title' );
+
+/**
+ * Inline theme css generated dynamically
+ */
+require FOODICA_THEME_DIR . 'inc/dynamic-css/body.php';
+require FOODICA_THEME_DIR . 'inc/dynamic-css/site-title.php';
+require FOODICA_THEME_DIR . 'inc/dynamic-css/site-description.php';
+require FOODICA_THEME_DIR . 'inc/dynamic-css/top-menu.php';
+require FOODICA_THEME_DIR . 'inc/dynamic-css/main-nav.php';
+require FOODICA_THEME_DIR . 'inc/dynamic-css/main-nav-mobile.php';
+require FOODICA_THEME_DIR . 'inc/dynamic-css/slider.php';
+require FOODICA_THEME_DIR . 'inc/dynamic-css/slider-button.php';
+require FOODICA_THEME_DIR . 'inc/dynamic-css/widget.php';
+require FOODICA_THEME_DIR . 'inc/dynamic-css/blog-post-title.php';
+require FOODICA_THEME_DIR . 'inc/dynamic-css/post-content.php';
+require FOODICA_THEME_DIR . 'inc/dynamic-css/post-title.php';
+require FOODICA_THEME_DIR . 'inc/dynamic-css/single-post-content.php';
+require FOODICA_THEME_DIR . 'inc/dynamic-css/page-title.php';
+require FOODICA_THEME_DIR . 'inc/dynamic-css/footer-nav.php';

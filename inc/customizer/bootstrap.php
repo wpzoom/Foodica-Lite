@@ -56,6 +56,7 @@ function foodica_customizer_add_sections_and_options( $wp_customize ) {
         'footer-background-color',
         array(
             'label' => __( 'Footer Menu Background Color', 'foodica' ),
+            'description' => __( '<span style="display:block; background: #eff4f7; border-radius: 5px;padding:10px; border:2px solid #2497d4;">🎨 There are 73 more color & font options in <strong>Foodica PRO</strong> <br/><br/>👉<strong><a href="'. esc_url(__('https://www.wpzoom.com/wordpress-food-themes/foodica-pro/?utm_campaign=foodica_lite_btn', 'foodica')) .'" target="_blank">Unlock all customizations</a></strong></span><br/>', 'foodica' ),
             'priority' => 0,
             'section' => 'colors',
             'settings' => 'footer-background-color'

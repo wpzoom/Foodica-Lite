@@ -4,6 +4,12 @@ https://www.wpzoom.com/themes/foodica-lite
 CHANGELOG
 ---------
 
+v 1.3.0
+* New: Typography section with System and Google Fonts integration in the Customizer
+* Google Fonts are now downloaded and hosted locally automatically using WPTT Webfont Loader (GDPR-compliant, as fonts are not loaded from Google's servers)
+* Multiple bug fixes in the block editor
+* Block Patterns for Food Bloggers is a recommended plugin now
+
 v 1.2.2
 * Multiple improvements and bug fixes
 

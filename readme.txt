@@ -2,7 +2,7 @@
 Contributors: WPZOOM
 Requires at least: 5.5
 Tested up to: 6.1
-Version: 1.2.2
+Version: 1.3.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, three-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, threaded-comments, translation-ready, blog, e-commerce, food-and-drink, rtl-language-support
@@ -27,6 +27,12 @@ After installing and activating the Jetpack plugin follow these steps:
 2. Check additional settings in Customizer > Featured Content
 
 == Changelog ==
+
+= 1.3.0 =
+* New: Typography section with System and Google Fonts integration in the Customizer
+* Google Fonts are now downloaded and hosted locally automatically using WPTT Webfont Loader (GDPR-compliant, as fonts are not loaded from Google's servers)
+* Multiple bug fixes in the block editor
+* Block Patterns for Food Bloggers is a recommended plugin now
 
 = 1.2.2 =
 * Multiple improvements and bug fixes
@@ -96,6 +102,11 @@ After installing and activating the Jetpack plugin follow these steps:
 * Initial release
 
 == Resources ==
+
+WPTT Webfont Loader - https://github.com/WPTT/webfont-loader
+License: Distributed under the terms of the MIT License (https://github.com/WPTT/webfont-loader/blob/master/LICENSE)
+Copyright: 2020 Ari Stathopoulos, WordPress Themes Team
+
 
 = Fonts =
 *  Roboto - https://www.google.com/fonts/specimen/Roboto
