@@ -6,7 +6,7 @@
 /**
  * Define Constants
  */
-define( 'FOODICA_THEME_VERSION', '1.2.3' );
+define( 'FOODICA_THEME_VERSION', '1.3.0' );
 define( 'FOODICA_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'FOODICA_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 define( 'FOODICA_THEME_ASSETS_URI', FOODICA_THEME_URI . 'dist' );
@@ -389,7 +389,7 @@ function foodica_register_required_plugins() {
     $recipe_card_plugin = array(
         'name'         => 'Recipe Card Blocks',
         'slug'         => 'recipe-card-blocks-by-wpzoom',
-        'required'     => true
+        'required'     => false
     );
 
     if ( class_exists( 'WPZOOM_Recipe_Card_Block_Gutenberg' ) ) {
@@ -399,7 +399,7 @@ function foodica_register_required_plugins() {
             $recipe_card_plugin = array(
                 'name'         => 'Recipe Card Blocks PRO',
                 'slug'         => 'recipe-card-blocks-by-wpzoom-pro',
-                'required'     => true
+                'required'     => false
             );
 
         }
@@ -428,6 +428,12 @@ function foodica_register_required_plugins() {
         array(
             'name'         => 'Custom Posts Per Page Reloaded',
             'slug'         => 'custom-posts-per-page-reloaded',
+            'required'     => false,
+        ),
+
+        array(
+            'name'         => 'Block Patterns for Food Bloggers',
+            'slug'         => 'block-patterns-for-food-bloggers',
             'required'     => false,
         ),
 

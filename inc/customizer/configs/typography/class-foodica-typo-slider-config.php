@@ -48,7 +48,7 @@ class Foodica_Typo_Slider_Config {
 					'args' => array(
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'foodica_sanitize_font_variant',
-						'default'           => '400',
+						'default'           => '500',
 					),
 				),
 				array(
@@ -62,7 +62,7 @@ class Foodica_Typo_Slider_Config {
 				array(
 					'id'   => 'slider-title-font-weight',
 					'args' => array(
-						'default'           => '400',
+						'default'           => '500',
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'foodica_sanitize_font_weight',
 					),
@@ -78,7 +78,7 @@ class Foodica_Typo_Slider_Config {
 				array(
 					'id'   => 'slider-title-line-height',
 					'args' => array(
-						'default'           => 1.8,
+						'default'           => 1.2,
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'foodica_sanitize_float',
 					),
@@ -113,7 +113,7 @@ class Foodica_Typo_Slider_Config {
 						'section'     => 'foodica_typography_section_slider',
 						'input_attrs' => array(
 							'min'  => 12,
-							'max'  => 36,
+							'max'  => 60,
 							'step' => 1,
 						),
 					),

@@ -40,7 +40,7 @@ class Foodica_Typo_Site_Title_Config {
 					'args' => array(
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'sanitize_text_field',
-						'default'           => 'Annie Use Your Telescope',
+						'default'           => "'Annie Use Your Telescope', sans-serif",
 					),
 				),
 				array(
@@ -78,7 +78,7 @@ class Foodica_Typo_Site_Title_Config {
 				array(
 					'id'   => 'title-line-height',
 					'args' => array(
-						'default'           => 1.8,
+						'default'           => 1.2,
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'foodica_sanitize_float',
 					),
@@ -113,7 +113,7 @@ class Foodica_Typo_Site_Title_Config {
 						'section'     => 'foodica_typography_section_site_title',
 						'input_attrs' => array(
 							'min'  => 12,
-							'max'  => 36,
+							'max'  => 100,
 							'step' => 1,
 						),
 					),

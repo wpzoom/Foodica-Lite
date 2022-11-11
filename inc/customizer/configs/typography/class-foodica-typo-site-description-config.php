@@ -78,7 +78,7 @@ class Foodica_Typo_Site_Description_Config {
 				array(
 					'id'   => 'description-line-height',
 					'args' => array(
-						'default'           => 1.8,
+						'default'           => 1.6,
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'foodica_sanitize_float',
 					),

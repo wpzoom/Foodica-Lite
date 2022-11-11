@@ -48,7 +48,7 @@ class Foodica_Typo_Widgets_Config {
 					'args' => array(
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'foodica_sanitize_font_variant',
-						'default'           => '600',
+						'default'           => '700',
 					),
 				),
 				array(
@@ -62,7 +62,7 @@ class Foodica_Typo_Widgets_Config {
 				array(
 					'id'   => 'widget-title-font-weight',
 					'args' => array(
-						'default'           => '400',
+						'default'           => '700',
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'foodica_sanitize_font_weight',
 					),

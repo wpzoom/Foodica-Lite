@@ -78,7 +78,7 @@ class Foodica_Typo_Nav_Mobile_Config {
 				array(
 					'id'   => 'mainmenu-mobile-line-height',
 					'args' => array(
-						'default'           => 1.8,
+						'default'           => 1.6,
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'foodica_sanitize_float',
 					),

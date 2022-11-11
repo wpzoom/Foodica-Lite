@@ -78,7 +78,7 @@ class Foodica_Typo_Single_Post_Title_Config {
 				array(
 					'id'   => 'post-title-line-height',
 					'args' => array(
-						'default'           => 1.8,
+						'default'           => 1.4,
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'foodica_sanitize_float',
 					),
@@ -113,7 +113,7 @@ class Foodica_Typo_Single_Post_Title_Config {
 						'section'     => 'foodica_typography_section_single_post_title',
 						'input_attrs' => array(
 							'min'  => 12,
-							'max'  => 36,
+							'max'  => 60,
 							'step' => 1,
 						),
 					),

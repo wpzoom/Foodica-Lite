@@ -78,7 +78,7 @@ class Foodica_Typo_Body_Config {
 				array(
 					'id'   => 'body-line-height',
 					'args' => array(
-						'default'           => 1.8,
+						'default'           => 1.6,
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'foodica_sanitize_float',
 					),

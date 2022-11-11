@@ -78,7 +78,7 @@ class Foodica_Typo_Post_Title_Config {
 				array(
 					'id'   => 'blog-title-line-height',
 					'args' => array(
-						'default'           => 1.8,
+						'default'           => 1.4,
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'foodica_sanitize_float',
 					),

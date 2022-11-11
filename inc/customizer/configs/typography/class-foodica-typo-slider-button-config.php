@@ -62,7 +62,7 @@ class Foodica_Typo_Slider_Button_Config {
 				array(
 					'id'   => 'slider-button-font-weight',
 					'args' => array(
-						'default'           => '400',
+						'default'           => '700',
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'foodica_sanitize_font_weight',
 					),
@@ -78,7 +78,7 @@ class Foodica_Typo_Slider_Button_Config {
 				array(
 					'id'   => 'slider-button-line-height',
 					'args' => array(
-						'default'           => 1.8,
+						'default'           => 1.6,
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'foodica_sanitize_float',
 					),

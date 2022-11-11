@@ -78,7 +78,7 @@ class Foodica_Typo_Page_Title_Config {
 				array(
 					'id'   => 'page-title-line-height',
 					'args' => array(
-						'default'           => 1.8,
+						'default'           => 1.4,
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'foodica_sanitize_float',
 					),
@@ -112,8 +112,8 @@ class Foodica_Typo_Page_Title_Config {
 						'label'       => __( 'Font Size (px)', 'foodica' ),
 						'section'     => 'foodica_typography_section_page_title',
 						'input_attrs' => array(
-							'min'  => 12,
-							'max'  => 36,
+							'min'  => 14,
+							'max'  => 100,
 							'step' => 1,
 						),
 					),
