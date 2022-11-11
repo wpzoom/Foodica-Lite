@@ -40,7 +40,7 @@ class Foodica_Typo_Site_Title_Config {
 					'args' => array(
 						'transport'         => 'postMessage',
 						'sanitize_callback' => 'sanitize_text_field',
-						'default'           => 'Inter',
+						'default'           => 'Annie Use Your Telescope',
 					),
 				),
 				array(
