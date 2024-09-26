@@ -508,7 +508,12 @@ if (is_admin()) {
  * WooCommerce compatibility.
  */
 
-if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+$active_plugins = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
+if ( ! is_array( $active_plugins ) ) {
+    $active_plugins = array( $active_plugins );
+}
+
+if ( in_array( 'woocommerce/woocommerce.php', $active_plugins ) ) {
     add_theme_support( 'woocommerce' );
     add_theme_support( 'wc-product-gallery-zoom' );
     add_theme_support( 'wc-product-gallery-lightbox' );
