@@ -1,8 +1,8 @@
 === Foodica ===
 Contributors: WPZOOM
-Requires at least: 5.5
-Tested up to: 6.1
-Version: 1.3.0
+Requires at least: 6.0
+Tested up to: 6.6
+Version: 1.3.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, three-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, threaded-comments, translation-ready, blog, e-commerce, food-and-drink, rtl-language-support
@@ -27,6 +27,9 @@ After installing and activating the Jetpack plugin follow these steps:
 2. Check additional settings in Customizer > Featured Content
 
 == Changelog ==
+
+= 1.3.1 =
+* Minor bug fixes and improvements
 
 = 1.3.0 =
 * New: Typography section with System and Google Fonts integration in the Customizer

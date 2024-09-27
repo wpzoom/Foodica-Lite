@@ -6,7 +6,7 @@
 /**
  * Define Constants
  */
-define( 'FOODICA_THEME_VERSION', '1.3.0' );
+define( 'FOODICA_THEME_VERSION', '1.3.1' );
 define( 'FOODICA_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'FOODICA_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 define( 'FOODICA_THEME_ASSETS_URI', FOODICA_THEME_URI . 'dist' );
@@ -180,13 +180,23 @@ function foodica_custom_logo() {
     has_custom_logo() ? the_custom_logo() : printf('<h2><a href="%s" title="%s">%s</a></h2>', esc_url(home_url()), get_bloginfo('description'), get_bloginfo('name'));
 }
 
+
+/*
+ * Fetch Theme Data & Options for About Page
+ */
+
+$foodica_data = wp_get_theme('foodica');
+$foodica_version = $foodica_data['Version'];
+$foodica_options = get_option('foodica_options');
+
+
 /**
  * Enqueues scripts and styles
  */
 function foodica_enqueue_scripts() {
-	wp_enqueue_style( 'foodica-style', get_stylesheet_uri(), '', '1.2.1' );
+	wp_enqueue_style( 'foodica-style', get_stylesheet_uri(), '', wp_get_theme()->get( 'Version' ) );
 
-	wp_enqueue_style( 'foodica-style-mobile', get_template_directory_uri() . '/assets/css/media-queries.css', array( 'foodica-style' ), '1.2.1' );
+	wp_enqueue_style( 'foodica-style-mobile', get_template_directory_uri() . '/assets/css/media-queries.css', array( 'foodica-style' ), wp_get_theme()->get( 'Version' ) );
 
 	// Add custom fonts, used in the main stylesheet.
 	Foodica_Fonts_Manager::render_fonts();
@@ -201,9 +211,9 @@ function foodica_enqueue_scripts() {
 
     wp_enqueue_script( 'superfish', get_template_directory_uri() . '/assets/js/superfish.min.js', array( 'jquery' ), '1.2.0', true );
 
-    wp_enqueue_script( 'foodica-search_button', get_template_directory_uri() . '/assets/js/foodica-search_button.js', array(), '1.2.1', true );
+    wp_enqueue_script( 'foodica-search_button', get_template_directory_uri() . '/assets/js/foodica-search_button.js', array(), wp_get_theme()->get( 'Version' ), true );
 
- 	wp_enqueue_script( 'foodica-script', get_template_directory_uri() . '/assets/js/foodica-functions.js', array( 'jquery' ), '1.2.0', true );
+ 	wp_enqueue_script( 'foodica-script', get_template_directory_uri() . '/assets/js/foodica-functions.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -426,8 +436,8 @@ function foodica_register_required_plugins() {
         ),
 
         array(
-            'name'         => 'Custom Posts Per Page Reloaded',
-            'slug'         => 'custom-posts-per-page-reloaded',
+            'name'         => 'WPZOOM Forms',
+            'slug'         => 'wpzoom-forms',
             'required'     => false,
         ),
 
@@ -466,42 +476,25 @@ function foodica_register_required_plugins() {
 }
 
 
-/*
- * Fetch Theme Data & Options for About Page
+/**
+ * Enqueues scripts and styles
  */
+require FOODICA_THEME_DIR . 'inc/classes/class-foodica-enqueue-scripts.php';
 
-$foodica_data = wp_get_theme('foodica');
-$foodica_version = $foodica_data['Version'];
-$foodica_options = get_option('foodica_options');
 
-if (!function_exists('foodica_admin_scripts')) {
-    function foodica_admin_scripts($hook) {
-        if ('appearance_page_foodica' === $hook || 'widgets.php' === $hook) {
-            wp_enqueue_style('foodica-admin', get_template_directory_uri() . '/inc/admin/admin.css');
-        }
 
-        // Styles
-        wp_enqueue_style(
-            'foodica-admin-review-notice',
-            get_template_directory_uri() . '/inc/admin/admin-review-notice.css'
-        );
+/**
+ * Theme admin notices and info page
+ */
+if ( is_admin() ) {
+    require FOODICA_THEME_DIR . 'inc/admin-notice.php';
+    require FOODICA_THEME_DIR . 'inc/theme-info-page.php';
 
+    if ( current_user_can( 'manage_options' ) ) {
+        require FOODICA_THEME_DIR . 'inc/classes/class-foodica-notices.php';
+        require FOODICA_THEME_DIR . 'inc/classes/class-foodica-notice-review.php';
     }
 }
-add_action('admin_enqueue_scripts', 'foodica_admin_scripts');
-
-
-if (is_admin()) {
-    require_once('inc/admin/admin.php');
-
-    if (current_user_can( 'manage_options' ) ) {
-        require_once(get_template_directory() . '/inc/admin/foodica-notices.php');
-        require_once(get_template_directory() . '/inc/admin/notice-review.php');
-
-    }
-
-}
-
 
 
 /**

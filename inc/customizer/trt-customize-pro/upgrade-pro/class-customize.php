@@ -77,7 +77,7 @@ final class Foodica_PRO_Customize {
                     'title'    => esc_html__( 'Upgrade to Foodica PRO', 'foodica' ),
 					'description'    => esc_html__( 'Unlock more features: 10 Color Schemes, Recipe Index, 600+ Google Fonts, 100+ Color options and more!', 'foodica' ),
 					'pro_text' => esc_html__( 'View Foodica PRO',         'foodica' ),
-					'pro_url'  => 'https://www.wpzoom.com/wordpress-food-themes/foodica-pro/?utm_campaign=foodica_lite_btn',
+					'pro_url'  => 'https://www.wpzoom.com/themes/foodica/?utm_campaign=foodica_lite_btn',
                     'priority' => 5
 				)
 			)
